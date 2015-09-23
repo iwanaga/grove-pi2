@@ -11,14 +11,14 @@ var board = new Board({
     },
     onInit: function(res) {
         if (res) {
-            console.log('GrovePi Version :: ' + board.version());
+            console.log('connected to GrovePi');
 
             var humiditySensor = new AnalogSensor('A0');
             console.log('start reading');
-            humiditySensor.on('change', function(res) {
-                console.log(res);
-            });
-            humiditySensor.watch(1000);
+            setInterval(function(){
+                var value = humiditySensor.read();
+                console.log(value);
+            }, 1000);
         }
     }
 });
