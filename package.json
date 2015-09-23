@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "heat-index": "0.0.3",
     "node-grovepi": "^2.0.5"
   },
   "devDependencies": {},
