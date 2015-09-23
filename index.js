@@ -3,7 +3,7 @@
 var GrovePi = require('node-grovepi').GrovePi;
 var Board = GrovePi.board;
 var AnalogSensor = GrovePi.sensors.base.Analog;
-var TempHumidity = GrovePi.sensors.DHTDigital;
+var DHTDigitalSensor = GrovePi.sensors.DHTDigital;
 
 var board = new Board({
     debug: true,
@@ -15,7 +15,7 @@ var board = new Board({
             console.log('connected to GrovePi');
 
             var humiditySensor = new AnalogSensor('A0');
-            var tempHumidity   = new TempHumidity('D2', 'DHT22', 'c');
+            var tempHumidity   = new DHTDigitalSensor(2, DHTDigitalSensor.VERSION.DHT22, DHTDigitalSensor.CELSIUS);
             console.log('start reading');
             setInterval(function(){
                 var value = humiditySensor.read();
