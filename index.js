@@ -13,7 +13,7 @@ var board = new Board({
         if (res) {
             console.log('GrovePi Version :: ' + board.version());
 
-            var humiditySensor = new AnalogSensor(0);
+            var humiditySensor = new AnalogSensor('A0');
             console.log('start reading');
             humiditySensor.on('change', function(res) {
                 console.log(res);
