@@ -4,6 +4,7 @@ var GrovePi = require('node-grovepi').GrovePi;
 var Board = GrovePi.board;
 var AnalogSensor = GrovePi.sensors.base.Analog;
 var DHTDigitalSensor = GrovePi.sensors.DHTDigital;
+var HI = require('heat-index');
 
 var board = new Board({
     debug: true,
@@ -22,7 +23,7 @@ var board = new Board({
                 console.log('moisture', value);
 
                 var arr = tempHumidity.read();
-                console.log('temperature:', arr[0], 'humidity:', arr[1], 'heat index:', arr[2]);
+                console.log('temperature:', arr[0], 'humidity:', arr[1], 'heat index:', HI.heatIndex({temperature: arr[0], humidity: arr[1]}));
             }, 1000);
         }
     }
