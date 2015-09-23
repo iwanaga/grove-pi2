@@ -15,7 +15,7 @@ var board = new Board({
             console.log('connected to GrovePi');
 
             var humiditySensor = new AnalogSensor('A0');
-            var tempHumidity   = new TempHumidity('A1', 'DHT22', 'c');
+            var tempHumidity   = new TempHumidity('D2', 'DHT22', 'c');
             console.log('start reading');
             setInterval(function(){
                 var value = humiditySensor.read();
