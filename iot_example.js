@@ -10,7 +10,8 @@ var Notifier     = require('./lib/notifier');
 var config = {
     apiKey: 'key-XXX',                 // MailGun の API Key を指定
     domain: 'sandboxXXX.mailgun.org',  // MailGun の Subdomain を指定
-    from  : 'XXX@XXX',                 // メール送信元
+    to:     'XXX@XXX',                 // メールの送信先
+    from  : 'XXX@XXX',                 // メールの送信元
     ngMessage: '土が乾いたよ。お水をあげてください。',
     okMessage: 'お水ありがとう。'
 };
