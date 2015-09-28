@@ -5,8 +5,8 @@ var Board        = GrovePi.board;
 var AnalogSensor = GrovePi.sensors.base.Analog;
 var pinID        = 'A0';
 
-var StateMachine = require('./stateMachine');
-var Notifier     = require('./notifier');
+var StateMachine = require('./lib/stateMachine');
+var Notifier     = require('./lib/notifier');
 var config = {
     apiKey: 'key-XXX',                 // MailGun の API Key を指定
     domain: 'sandboxXXX.mailgun.org',  // MailGun の Subdomain を指定
