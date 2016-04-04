@@ -1,5 +1,4 @@
 'use strict';
-
 var HI = require('heat-index');
 var post = require('./lib/http_post');
 var GrovePi = require('node-grovepi').GrovePi;
@@ -25,9 +24,8 @@ var board = new Board({
                     humidity: arr[1],
                     heatIndex: HI.heatIndex({temperature: arr[0], humidity: arr[1]})
                 }, conf, '/api/thermoHygros');
-            }, 10000);
+            }, 60000);
         }
     }
 });
-
 board.init();
