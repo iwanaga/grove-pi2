@@ -21,7 +21,7 @@ var board = new Board({
                     humidity: arr[1],
                     heatIndex: HI.heatIndex({temperature: arr[0], humidity: arr[1]})
                 });
-            }, 60000);
+            }, 10000);
         }
     }
 });
