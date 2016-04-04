@@ -5,6 +5,10 @@ var post = require('./lib/http_post');
 var GrovePi = require('node-grovepi').GrovePi;
 var Board = GrovePi.board;
 var DHTDigitalSensor = GrovePi.sensors.DHTDigital;
+var conf = {
+    hostname: 'xxxx-xxxx-xxxx.herokuapp.com',
+    port: 443
+};
 
 var board = new Board({
     debug: true,
@@ -20,7 +24,7 @@ var board = new Board({
                     temperature: arr[0],
                     humidity: arr[1],
                     heatIndex: HI.heatIndex({temperature: arr[0], humidity: arr[1]})
-                });
+                }, conf, '/api/thermoHygros');
             }, 10000);
         }
     }
